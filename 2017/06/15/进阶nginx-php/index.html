@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>测试文件 | Hexo</title>
+  <title>进阶nginx+php | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我丢">
+  <meta name="description" content="上一次配置了nginx+php，不过直接在nginx.conf里面修改容易出错，一个报错所有网站都要挂，所以这次把conf外置出去。把nginx.conf之前的修改都改回来。然后在最下面加一句include vhost/.conf;然后在nginx/conf目录下新建一个vhost文件夹vhost里建一个**.com.conf文件例如：www.ssssb.com.conf www.ssssb.co">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试文件">
-<meta property="og:url" content="http://yoursite.com/2017/06/13/article-title/index.html">
+<meta property="og:title" content="进阶nginx+php">
+<meta property="og:url" content="http://yoursite.com/2017/06/15/进阶nginx-php/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="我丢">
-<meta property="og:updated_time" content="2017-06-13T05:52:32.335Z">
+<meta property="og:description" content="上一次配置了nginx+php，不过直接在nginx.conf里面修改容易出错，一个报错所有网站都要挂，所以这次把conf外置出去。把nginx.conf之前的修改都改回来。然后在最下面加一句include vhost/.conf;然后在nginx/conf目录下新建一个vhost文件夹vhost里建一个**.com.conf文件例如：www.ssssb.com.conf www.ssssb.co">
+<meta property="og:updated_time" content="2017-06-15T06:55:35.580Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试文件">
-<meta name="twitter:description" content="我丢">
+<meta name="twitter:title" content="进阶nginx+php">
+<meta name="twitter:description" content="上一次配置了nginx+php，不过直接在nginx.conf里面修改容易出错，一个报错所有网站都要挂，所以这次把conf外置出去。把nginx.conf之前的修改都改回来。然后在最下面加一句include vhost/.conf;然后在nginx/conf目录下新建一个vhost文件夹vhost里建一个**.com.conf文件例如：www.ssssb.com.conf www.ssssb.co">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,27 +154,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-article-title" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-进阶nginx-php" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      测试文件
+      进阶nginx+php
     </h1>
   
 
         
-        <a href="/2017/06/13/article-title/" class="archive-article-date">
-  	<time datetime="2017-06-13T05:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-13</time>
+        <a href="/2017/06/15/进阶nginx-php/" class="archive-article-date">
+  	<time datetime="2017-06-15T06:29:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我丢</p>
+        <p>上一次配置了nginx+php，不过直接在nginx.conf里面修改容易出错，一个报错所有网站都要挂，所以这次把conf外置出去。<br>把nginx.conf之前的修改都改回来。<br>然后在最下面加一句<br>include vhost/<em>.conf;<br>然后在nginx/conf目录下新建一个vhost文件夹<br>vhost里建一个**</em>.com.conf文件<br>例如：www.ssssb.com.conf</p>
+<p>www.ssssb.com.conf里面的配置如下</p>
+<p>server {<br>    server_name www.ssssb.com;    代表你的网站域名<br>    listen 80;<br>    root E:/server/www/www.ssssb.com;    网站文件所在地<br>    index index.html index.htm index.jsp index.php;</p>
+<h1 id="pass-the-PHP-scripts-to-FastCGI-server-listening-on-127-0-0-1-9000"><a href="#pass-the-PHP-scripts-to-FastCGI-server-listening-on-127-0-0-1-9000" class="headerlink" title="pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000"></a>pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</h1><pre><code>location ~ \.php$ {
+
+    fastcgi_pass   127.0.0.1:9000;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+</code></pre><p>}<br>在C:\Windows\System32\drivers\etc目录下找到hosts文件<br>localhost name resolution is handled within DNS itself.下加一条<br>127.0.0.1        www.ssssb.com</p>
+<p>这样一个网站就配置完了</p>
 
       
 
@@ -254,7 +265,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/13/article-title/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/15/进阶nginx-php/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,18 +279,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/15/nginx-php/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          nginx+php
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/06/13/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2017/06/15/nginx-php/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nginx+php</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -42,10 +42,11 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://zhuxian.wanmei.com/resources/jpg/140523/41400831205359.jpg" class="js-avatar">
+			<img src="http://zhuxian.wanmei.com/resources/jpg/110520/41305882349073.jpg" class="js-avatar show">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">XXX</a></h1>
+		
+		  <h1 class="header-author"><a href="/">yourdaddy</a></h1>
 		</hgroup>
 		
 
@@ -100,10 +101,10 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://zhuxian.wanmei.com/resources/jpg/140523/41400831205359.jpg" class="js-avatar">
+				<img src="http://zhuxian.wanmei.com/resources/jpg/110520/41305882349073.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">John Doe</h1>
+			  <h1 class="header-author js-header-author">yourdaddy</h1>
 			</hgroup>
 			
 			
@@ -151,6 +152,65 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-进阶nginx-php" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/15/进阶nginx-php/">进阶nginx+php</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/15/进阶nginx-php/" class="archive-article-date">
+  	<time datetime="2017-06-15T06:29:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上一次配置了nginx+php，不过直接在nginx.conf里面修改容易出错，一个报错所有网站都要挂，所以这次把conf外置出去。<br>把nginx.conf之前的修改都改回来。<br>然后在最下面加一句<br>include vhost/<em>.conf;<br>然后在nginx/conf目录下新建一个vhost文件夹<br>vhost里建一个**</em>.com.conf文件<br>例如：www.ssssb.com.conf</p>
+<p>www.ssssb.com.conf里面的配置如下</p>
+<p>server {<br>    server_name www.ssssb.com;    代表你的网站域名<br>    listen 80;<br>    root E:/server/www/www.ssssb.com;    网站文件所在地<br>    index index.html index.htm index.jsp index.php;</p>
+<h1 id="pass-the-PHP-scripts-to-FastCGI-server-listening-on-127-0-0-1-9000"><a href="#pass-the-PHP-scripts-to-FastCGI-server-listening-on-127-0-0-1-9000" class="headerlink" title="pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000"></a>pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</h1><pre><code>location ~ \.php$ {
+
+    fastcgi_pass   127.0.0.1:9000;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+</code></pre><p>}<br>在C:\Windows\System32\drivers\etc目录下找到hosts文件<br>localhost name resolution is handled within DNS itself.下加一条<br>127.0.0.1        www.ssssb.com</p>
+<p>这样一个网站就配置完了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/15/进阶nginx-php/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-nginx-php" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -171,45 +231,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="简略说法"><a href="#简略说法" class="headerlink" title="简略说法"></a>简略说法</h1><p>1.配置php。ini<br>启用extension_dir = ？？？ 这里指向php连接nginx和mysql配置文件<br>删掉要用的dll文件前面的；将它启用<br>2.配置nginx。confi<br>root           E:/server/www; 站点文件位置<br>fastcgi_pass   127.0.0.1:9000;默认监听端口<br>fastcgi_index  index.php;默认主页<br>$document_root  指向上面那个root站点位置<br>$fastcgi_script_name;指定运行。php后缀的脚本文件<br>include  fastcgi_params; 运行所有fastcgi_param</p>
-<h1 id="详细说法"><a href="#详细说法" class="headerlink" title="详细说法"></a>详细说法</h1><pre><code>1、首先需要准备的应用程序包。
+        <h1 id="1、首先需要准备的应用程序包。"><a href="#1、首先需要准备的应用程序包。" class="headerlink" title="1、首先需要准备的应用程序包。"></a>1、首先需要准备的应用程序包。</h1><p>nginx：nginx/Windows-1.0.4</p>
+<p>php：php-5.2.16-nts-Win32-VC6-x86.zip （nginx下php是以FastCGI的方式运行，所以我们下载非线程安全也就是nts的php包）</p>
+<p>（还会用到）RunHiddenConsole：RunHiddenConsole.zip</p>
+<p>#2、安装与配置。</p>
+<p>##1）php的安装与配置。</p>
+<p>直接解压下载好的php包，到D盘wnmp目录（D:\wnmp），这里把解压出来的文件夹重命名成php5。进入文件夹修改php.ini-recommended文件为php.ini，并用Editplus或者Notepad++打开来。找到<br>extension_dir = “./ext”更改为extension_dir = “D:/wnmp/php5/ext”<br>往下看，再找到</p>
+<p>;extension=php_mysql.dll<br>;extension=php_mysqli.dll</p>
+<p>前面指定了php的ext路径后，只要把需要的扩展包前面所对应的“;”去掉，就可以了。这里打开php_mysql.dll和php<em>mysqli.dll，让php支持mysql。当然不要忘掉很重要的一步就是，把php5目录下的libmysql.dll文件复制到C:\Windows目录下，也可以在系统变量里面指定路径，当然这里我选择了更为方便的方法^</em>^。</p>
+<p>到这里，php已经可以支持mysql了。</p>
+<p>接下来我们来配置php，让php能够与nginx结合。找到</p>
+<p>;cgi.fix_pathinfo=1</p>
+<p>我们去掉这里的封号。</p>
+<p>cgi.fix_pathinfo=1<br>这一步非常重要，这里是php的CGI的设置。</p>
+<p>##2）nginx的安装与配置。</p>
+<p>把下载好的nginx-1.0.4的包同样解压到D盘的wnmp目录下，并重命名为nginx。接下来，我们来配置nginx，让它能够和php协同工作。进入nginx的conf目录，打开nginx的配置文件nginx.conf，找到</p>
+<pre><code>location / {
+      root   html;　　　　　　#这里是站点的根目录
+      index  index.html index.htm;
+}
+将root  html;改为root   D:/wnmp/www;
 
-　　nginx：nginx/Windows-1.0.4
-
-　　php：php-5.2.16-nts-Win32-VC6-x86.zip （nginx下php是以FastCGI的方式运行，所以我们下载非线程安全也就是nts的php包）
-
-　　（还会用到）RunHiddenConsole：RunHiddenConsole.zip
-</code></pre><p>2、安装与配置。</p>
-<pre><code>    　1）php的安装与配置。
-
-    　　直接解压下载好的php包，到D盘wnmp目录（D:\wnmp），这里把解压出来的文件夹重命名成php5。进入文件夹修改php.ini-recommended文件为php.ini，并用Editplus或者Notepad++打开来。找到
-    extension_dir = &quot;./ext&quot;更改为extension_dir = &quot;D:/wnmp/php5/ext&quot;
-    往下看，再找到
-    ;extension=php_mysql.dll
-    ;extension=php_mysqli.dll
-    前面指定了php的ext路径后，只要把需要的扩展包前面所对应的“;”去掉，就可以了。这里打开php_mysql.dll和php_mysqli.dll，让php支持mysql。当然不要忘掉很重要的一步就是，把php5目录下的libmysql.dll文件复制到C:\Windows目录下，也可以在系统变量里面指定路径，当然这里我选择了更为方便的方法^_^。
-
-    到这里，php已经可以支持mysql了。
-
-    　　接下来我们来配置php，让php能够与nginx结合。找到
-
-
-    ;cgi.fix_pathinfo=1
-    我们去掉这里的封号。
-
-    cgi.fix_pathinfo=1
-    这一步非常重要，这里是php的CGI的设置。
-    　2）nginx的安装与配置。
-
-    　　把下载好的nginx-1.0.4的包同样解压到D盘的wnmp目录下，并重命名为nginx。接下来，我们来配置nginx，让它能够和php协同工作。进入nginx的conf目录，打开nginx的配置文件nginx.conf，找到
-
-    location / {
-          root   html;　　　　　　#这里是站点的根目录
-          index  index.html index.htm;
-    }
-    将root  html;改为root   D:/wnmp/www;
-
-    再往下，找到
+再往下，找到
 
 
 
@@ -222,60 +265,41 @@
 #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
 #    include        fastcgi_params;
 #}
+</code></pre><p>先将前面的“#”去掉，同样将root  html;改为root   D:/wnmp/www;。再把/scripts改为“$document_root”，这里的“$document_root”就是指前面“root”所指的站点路径，这是改完后的：</p>
+<pre><code># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+#
+location ~ \.php$ {
+      root           D:/wnmp/www;
+      fastcgi_pass   127.0.0.1:9000;
+      fastcgi_index  index.php;
+      fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+      include        fastcgi_params;
+}
+</code></pre><p>保存配置文件，就可以了。</p>
+<p>nginx+php的环境就初步配置好了，来跑跑看。我们可以输入命令 </p>
+<p>来启动php，并手动启动nginx，当然也可以利用脚本来实现。</p>
+<p>首先把下载好的RunHiddenConsole.zip包解压到nginx目录内，RunHiddenConsole.exe的作用是在执行完命令行脚本后可以自动关闭脚本，而从脚本中开启的进程不被关闭。然后来创建脚本，命名为“start_nginx.bat”，我们在Notepad++里来编辑它</p>
+<pre><code>@echo off
+REM Windows 下无效
+REM set PHP_FCGI_CHILDREN=5
 
-    先将前面的“#”去掉，同样将root  html;改为root   D:/wnmp/www;。再把标记为红色的/scripts改为“$document_root”，这里的“$document_root”就是指前面“root”所指的站点路径，这是改完后的：
+##REM 每个进程处理的最大请求数，或设置为 Windows 环境变量
+set PHP_FCGI_MAX_REQUESTS=1000
 
+echo Starting PHP FastCGI...
+RunHiddenConsole D:/wnmp/php5/php-cgi.exe -b 127.0.0.1:9000 -c D:/wnmp/php5/php.ini
 
-    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-    #
-    location ~ \.php$ {
-          root           D:/wnmp/www;
-          fastcgi_pass   127.0.0.1:9000;
-          fastcgi_index  index.php;
-          fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-          include        fastcgi_params;
-    }
+echo Starting nginx...
+RunHiddenConsole D:/wnmp/nginx/nginx.exe -p D:/wnmp/nginx
+</code></pre><p>再另外创建一个名为stop_nginx.bat的脚本用来关闭nginx<br>        @echo off<br>        echo Stopping nginx…<br>        taskkill /F /IM nginx.exe &gt; nul<br>        echo Stopping PHP FastCGI…<br>        taskkill /F /IM php-cgi.exe &gt; nul<br>        exit</p>
+<p>这样，我们的服务脚本也都创建完毕了。双击start_nginx.bat看看进程管理器有两个nginx.exe的进程和一个php-cgi.exe的进程</p>
+<p>如果启动报msvcp110错误之类，就去找360人工服务搜索msvcp110一键修复，修复完要重启才能生效</p>
+<p>到站点目录下，新建一个phpinfo.php的文件，在里面编辑</p>
+<pre><code>&lt;?php
+    phpinfo();
+?&gt;
+</code></pre><p>保存后，打开浏览器输入“<a href="http://localhost/phpinfo.php”，如果看到php的配置" target="_blank" rel="external">http://localhost/phpinfo.php”，如果看到php的配置</a>  就说明，nginx+php的环境已经配置好了</p>
 
-    保存配置文件，就可以了。
-
-    　　nginx+php的环境就初步配置好了，来跑跑看。我们可以输入命令 
-
-    来启动php，并手动启动nginx，当然也可以利用脚本来实现。
-
-    　　首先把下载好的RunHiddenConsole.zip包解压到nginx目录内，RunHiddenConsole.exe的作用是在执行完命令行脚本后可以自动关闭脚本，而从脚本中开启的进程不被关闭。然后来创建脚本，命名为“start_nginx.bat”，我们在Notepad++里来编辑它
-
-    @echo off
-    REM Windows 下无效
-    REM set PHP_FCGI_CHILDREN=5
-
-    ##REM 每个进程处理的最大请求数，或设置为 Windows 环境变量
-    set PHP_FCGI_MAX_REQUESTS=1000
-
-    echo Starting PHP FastCGI...
-    RunHiddenConsole D:/wnmp/php5/php-cgi.exe -b 127.0.0.1:9000 -c D:/wnmp/php5/php.ini
-
-    echo Starting nginx...
-    RunHiddenConsole D:/wnmp/nginx/nginx.exe -p D:/wnmp/nginx
-
-    再另外创建一个名为stop_nginx.bat的脚本用来关闭nginx
-    @echo off
-    echo Stopping nginx...  
-    taskkill /F /IM nginx.exe &gt; nul
-    echo Stopping PHP FastCGI...
-    taskkill /F /IM php-cgi.exe &gt; nul
-    exit
-
-    这样，我们的服务脚本也都创建完毕了。双击start_nginx.bat看看进程管理器有两个nginx.exe的进程和一个php-cgi.exe的进程
-
-    如果启动报msvcp110错误之类，就去找360人工服务搜索msvcp110一键修复，修复完要重启才能生效
-
-    到站点目录下，新建一个phpinfo.php的文件，在里面编辑
-
-    &lt;?php
-        phpinfo();
-    ?&gt;
-    保存后，打开浏览器输入“http://localhost/phpinfo.php”，如果看到php的配置  就说明，nginx+php的环境已经配置好了
-</code></pre>
       
 
       
@@ -416,7 +440,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 John Doe
+    		&copy; 2017 yourdaddy
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
