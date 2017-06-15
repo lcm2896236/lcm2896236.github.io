@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>配置github+hexo | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="安装前提软件Node.js:作用：node.js用来创建hexo博客框架的，我当前安装版本为：node-v5.6.0-x64 Git客户端:作用：把本地的hexo内容提交到github上去，我当前安装的是Git-2.7.0-64-bit 安装Hexo安装前先介绍几个hexo常用的命令,#后面为注释。 hexo g #完整命令为hexo generate,用于生成静态文件hexo s #完整命令为h">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置github+hexo">
+<meta property="og:url" content="http://yoursite.com/2017/06/15/配置github-hexo/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="安装前提软件Node.js:作用：node.js用来创建hexo博客框架的，我当前安装版本为：node-v5.6.0-x64 Git客户端:作用：把本地的hexo内容提交到github上去，我当前安装的是Git-2.7.0-64-bit 安装Hexo安装前先介绍几个hexo常用的命令,#后面为注释。 hexo g #完整命令为hexo generate,用于生成静态文件hexo s #完整命令为h">
+<meta property="og:updated_time" content="2017-06-15T09:23:40.732Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="配置github+hexo">
+<meta name="twitter:description" content="安装前提软件Node.js:作用：node.js用来创建hexo博客框架的，我当前安装版本为：node-v5.6.0-x64 Git客户端:作用：把本地的hexo内容提交到github上去，我当前安装的是Git-2.7.0-64-bit 安装Hexo安装前先介绍几个hexo常用的命令,#后面为注释。 hexo g #完整命令为hexo generate,用于生成静态文件hexo s #完整命令为h">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,157 +154,150 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-配置github-hexo" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      配置github+hexo
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/15/配置github-hexo/" class="archive-article-date">
+
+        
+        <a href="/2017/06/15/配置github-hexo/" class="archive-article-date">
   	<time datetime="2017-06-15T08:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/配置github-hexo/">配置github+hexo</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装前提软件"><a href="#安装前提软件" class="headerlink" title="安装前提软件"></a>安装前提软件</h2><p>Node.js:<br>作用：node.js用来创建hexo博客框架的，我当前安装版本为：node-v5.6.0-x64</p>
+<h2 id="Git客户端"><a href="#Git客户端" class="headerlink" title="Git客户端:"></a>Git客户端:</h2><p>作用：把本地的hexo内容提交到github上去，我当前安装的是Git-2.7.0-64-bit</p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>安装前先介绍几个hexo常用的命令,#后面为注释。</p>
+<p>hexo g #完整命令为hexo generate,用于生成静态文件<br>hexo s #完整命令为hexo server,用于启动服务器，主要用来本地预览<br>hexo d #完整命令为hexo deploy,用于将本地文件发布到github上<br>hexo n #完整命令为hexo new,用于新建一篇文章</p>
+<h1 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h1><p>先在一个位置创建一个文件夹，博主的文件位置是D:/hexo<br>右键选择git bash here</p>
+<p>输入<br>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a><br>cnpm install hexo –save<br>安装淘宝镜像npm  因为官网的容易被”墙”<br>安装完输入<br>hexo -v查看是否显示安装成功 安装成功显示<br>hexo: 3.3.7<br>hexo-cli: 1.0.3<br>os: Windows_NT 10.0.10586 win32 x64<br>http_parser: 2.7.0<br>node: 6.10.0<br>v8: 5.1.281.93<br>uv: 1.9.1<br>zlib: 1.2.8<br>ares: 1.10.1-DEV<br>icu: 58.2<br>modules: 48<br>然后开始初始化hexo<br>hexo init<br>安装生成器<br>cnpm install<br>运行hexo,以后要在本地运行博客只要输入该命令即可<br>hexo s -g<br>随便找个浏览器网址栏处输入localhost:4000进入本地博客<br>到此  本地博客已配置完毕</p>
+<p>要上传到github 先去github.com注册个账号<br>注册完建一个库  New repository<br>库名格式  yourname.github.io      yourname就是你注册时的那个<br>创建完点setting选项<br>向下寻找到GitHub Pages这栏<br>点击choose a theme创建一个默认主题,没什么用的  随便选<br>接着生成ssh密钥<br>ssh-keygen -t rsa -C “youremail”  你注册时的那个邮箱<br>到了这一步，就可以添加SSH key到你的Github账户了。键入以下指令，拷贝Key<br>（先拷贝了，等一下可以直接粘贴，不放心的在执行下面命令后，先黏贴在记事本上）：</p>
+<p>clip &lt; ~/.ssh/id_rsa.pub</p>
+<p>然后到Github里面，点击右上角的设置图标Settings,找到SSH keys,Ttile随便你命名，<br>Key就黏贴上你刚才复制的key,然后点Add SSH key，最后会让你重新输入下gitHub的密码</p>
+<p>最后还是测试一下吧，键入以下命令：<br>ssh -T git@github.com<br>你可能会看到有警告，没事，输入“yes”就好<br>以上就表示SSH配置好了，执行以下命令部署到Github上。<br>hexo g<br>hexo d<br>如果执行hexo d命令报错：<br>就先安装一下hexo-deployer-git这个模块：</p>
+<p>npm install hexo-deployer-git –save</p>
+<p>安装好了继续执行hexo d部署命令<br>在网址栏输入yourname.github.io这个地址就可以访问你的博客了</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/15/配置github-hexo/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/15/进阶nginx-php/" class="archive-article-date">
-  	<time datetime="2017-06-15T06:29:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/进阶nginx-php/">进阶nginx+php</a>
-    </h1>
+  
+    <a href="/2017/06/15/进阶nginx-php/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">进阶nginx+php</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/15/nginx-php/" class="archive-article-date">
-  	<time datetime="2017-06-15T01:00:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/nginx-php/">nginx+php</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/13/article-title/" class="archive-article-date">
-  	<time datetime="2017-06-13T05:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/13/article-title/">测试文件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/13/hello-world/" class="archive-article-date">
-  	<time datetime="2017-06-13T03:51:55.468Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -323,8 +320,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
