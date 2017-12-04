@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>yourdaddy</title>
+  <title>win10下配置IIS+PHP | yourdaddy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="yourdaddy">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="#一：安装IIS服务器 1.进入控制面板&amp;gt;&amp;gt;程序和功能&amp;gt;&amp;gt;打开或关闭Windows 功能，找到Internet信息服务，记得选中CGI这一项/img/iis+php/1.jpg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="win10下配置IIS+PHP">
+<meta property="og:url" content="http://yoursite.com/2017/06/16/win10下配置IIS-PHP/index.html">
 <meta property="og:site_name" content="yourdaddy">
+<meta property="og:description" content="#一：安装IIS服务器 1.进入控制面板&amp;gt;&amp;gt;程序和功能&amp;gt;&amp;gt;打开或关闭Windows 功能，找到Internet信息服务，记得选中CGI这一项/img/iis+php/1.jpg">
+<meta property="og:updated_time" content="2017-06-16T07:34:32.765Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yourdaddy">
+<meta name="twitter:title" content="win10下配置IIS+PHP">
+<meta name="twitter:description" content="#一：安装IIS服务器 1.进入控制面板&amp;gt;&amp;gt;程序和功能&amp;gt;&amp;gt;打开或关闭Windows 功能，找到Internet信息服务，记得选中CGI这一项/img/iis+php/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="yourdaddy" type="application/atom+xml">
   
@@ -150,16 +154,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-win10下配置IIS-PHP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-win10下配置IIS-PHP" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/16/win10下配置IIS-PHP/">win10下配置IIS+PHP</a>
+    <h1 class="article-title" itemprop="name">
+      win10下配置IIS+PHP
     </h1>
   
 
@@ -178,64 +180,26 @@
       
 
       
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/16/win10下配置IIS-PHP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-配置github-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/15/配置github-hexo/">配置github+hexo</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/15/配置github-hexo/" class="archive-article-date">
-  	<time datetime="2017-06-15T08:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装前提软件"><a href="#安装前提软件" class="headerlink" title="安装前提软件"></a>安装前提软件</h2><p>Node.js:<br>作用：node.js用来创建hexo博客框架的，我当前安装版本为：node-v5.6.0-x64</p>
-<h2 id="Git客户端"><a href="#Git客户端" class="headerlink" title="Git客户端:"></a>Git客户端:</h2><p>作用：把本地的hexo内容提交到github上去，我当前安装的是Git-2.7.0-64-bit</p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>安装前先介绍几个hexo常用的命令,#后面为注释。</p>
-<p>hexo g #完整命令为hexo generate,用于生成静态文件<br>hexo s #完整命令为hexo server,用于启动服务器，主要用来本地预览<br>hexo d #完整命令为hexo deploy,用于将本地文件发布到github上<br>hexo n #完整命令为hexo new,用于新建一篇文章</p>
-<h1 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h1><p>先在一个位置创建一个文件夹，博主的文件位置是D:/hexo<br>右键选择git bash here</p>
-<p>输入<br>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a><br>cnpm install hexo –save<br>安装淘宝镜像npm  因为官网的容易被”墙”<br>安装完输入<br>hexo -v查看是否显示安装成功 安装成功显示<br>hexo: 3.3.7<br>hexo-cli: 1.0.3<br>os: Windows_NT 10.0.10586 win32 x64<br>http_parser: 2.7.0<br>node: 6.10.0<br>v8: 5.1.281.93<br>uv: 1.9.1<br>zlib: 1.2.8<br>ares: 1.10.1-DEV<br>icu: 58.2<br>modules: 48<br>然后开始初始化hexo<br>hexo init<br>安装生成器<br>cnpm install<br>运行hexo,以后要在本地运行博客只要输入该命令即可<br>hexo s -g<br>随便找个浏览器网址栏处输入localhost:4000进入本地博客<br>到此  本地博客已配置完毕</p>
-<p>要上传到github 先去github.com注册个账号<br>注册完建一个库  New repository<br>库名格式  yourname.github.io      yourname就是你注册时的那个<br>创建完点setting选项<br>向下寻找到GitHub Pages这栏<br>点击choose a theme创建一个默认主题,没什么用的  随便选<br>接着生成ssh密钥<br>ssh-keygen -t rsa -C “youremail”  你注册时的那个邮箱<br>到了这一步，就可以添加SSH key到你的Github账户了。键入以下指令，拷贝Key<br>（先拷贝了，等一下可以直接粘贴，不放心的在执行下面命令后，先黏贴在记事本上）：</p>
-<p>clip &lt; ~/.ssh/id_rsa.pub</p>
-<p>然后到Github里面，点击右上角的设置图标Settings,找到SSH keys,Ttile随便你命名，<br>Key就黏贴上你刚才复制的key,然后点Add SSH key，最后会让你重新输入下gitHub的密码</p>
-<p>最后还是测试一下吧，键入以下命令：<br>ssh -T git@github.com<br>你可能会看到有警告，没事，输入“yes”就好<br>以上就表示SSH配置好了，执行以下命令部署到Github上。<br>hexo g<br>hexo d<br>如果执行hexo d命令报错：<br>就先安装一下hexo-deployer-git这个模块：</p>
-<p>npm install hexo-deployer-git –save</p>
-<p>安装好了继续执行hexo d部署命令<br>在网址栏输入yourname.github.io这个地址就可以访问你的博客了</p>
-
-      
-
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -244,300 +208,85 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/15/配置github-hexo/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/16/win10下配置IIS-PHP/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
   
-    <article id="post-进阶nginx-php" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/15/进阶nginx-php/">进阶nginx+php</a>
-    </h1>
   
-
-        
-        <a href="/2017/06/15/进阶nginx-php/" class="archive-article-date">
-  	<time datetime="2017-06-15T06:29:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上一次配置了nginx+php，不过直接在nginx.conf里面修改容易出错，一个报错所有网站都要挂，所以这次把conf外置出去。<br>把nginx.conf之前的修改都改回来。<br>然后在最下面加一句<br>include vhost/<em>.conf;<br>然后在nginx/conf目录下新建一个vhost文件夹<br>vhost里建一个**</em>.com.conf文件<br>例如：www.ssssb.com.conf</p>
-<p>www.ssssb.com.conf里面的配置如下</p>
-<p>server {<br>    server_name www.ssssb.com;    代表你的网站域名<br>    listen 80;<br>    root E:/server/www/www.ssssb.com;    网站文件所在地<br>    index index.html index.htm index.jsp index.php;</p>
-<h1 id="pass-the-PHP-scripts-to-FastCGI-server-listening-on-127-0-0-1-9000"><a href="#pass-the-PHP-scripts-to-FastCGI-server-listening-on-127-0-0-1-9000" class="headerlink" title="pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000"></a>pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</h1><pre><code>location ~ \.php$ {
-
-    fastcgi_pass   127.0.0.1:9000;
-    fastcgi_index  index.php;
-    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-    include        fastcgi_params;
-}
-</code></pre><p>}<br>在C:\Windows\System32\drivers\etc目录下找到hosts文件<br>localhost name resolution is handled within DNS itself.下加一条<br>127.0.0.1        www.ssssb.com</p>
-<p>这样一个网站就配置完了</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/15/进阶nginx-php/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+    <a href="/2017/06/15/配置github-hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">配置github+hexo</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
 
 
   
-    <article id="post-nginx-php" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/15/nginx-php/">nginx+php</a>
-    </h1>
   
 
-        
-        <a href="/2017/06/15/nginx-php/" class="archive-article-date">
-  	<time datetime="2017-06-15T01:00:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1、首先需要准备的应用程序包。"><a href="#1、首先需要准备的应用程序包。" class="headerlink" title="1、首先需要准备的应用程序包。"></a>1、首先需要准备的应用程序包。</h1><p>nginx：nginx/Windows-1.0.4</p>
-<p>php：php-5.2.16-nts-Win32-VC6-x86.zip （nginx下php是以FastCGI的方式运行，所以我们下载非线程安全也就是nts的php包）</p>
-<p>（还会用到）RunHiddenConsole：RunHiddenConsole.zip</p>
-<p>#2、安装与配置。</p>
-<p>##1）php的安装与配置。</p>
-<p>直接解压下载好的php包，到D盘wnmp目录（D:\wnmp），这里把解压出来的文件夹重命名成php5。进入文件夹修改php.ini-recommended文件为php.ini，并用Editplus或者Notepad++打开来。找到<br>extension_dir = “./ext”更改为extension_dir = “D:/wnmp/php5/ext”<br>往下看，再找到</p>
-<p>;extension=php_mysql.dll<br>;extension=php_mysqli.dll</p>
-<p>前面指定了php的ext路径后，只要把需要的扩展包前面所对应的“;”去掉，就可以了。这里打开php_mysql.dll和php<em>mysqli.dll，让php支持mysql。当然不要忘掉很重要的一步就是，把php5目录下的libmysql.dll文件复制到C:\Windows目录下，也可以在系统变量里面指定路径，当然这里我选择了更为方便的方法^</em>^。</p>
-<p>到这里，php已经可以支持mysql了。</p>
-<p>接下来我们来配置php，让php能够与nginx结合。找到</p>
-<p>;cgi.fix_pathinfo=1</p>
-<p>我们去掉这里的封号。</p>
-<p>cgi.fix_pathinfo=1<br>这一步非常重要，这里是php的CGI的设置。</p>
-<p>##2）nginx的安装与配置。</p>
-<p>把下载好的nginx-1.0.4的包同样解压到D盘的wnmp目录下，并重命名为nginx。接下来，我们来配置nginx，让它能够和php协同工作。进入nginx的conf目录，打开nginx的配置文件nginx.conf，找到</p>
-<pre><code>location / {
-      root   html;　　　　　　#这里是站点的根目录
-      index  index.html index.htm;
-}
-将root  html;改为root   D:/wnmp/www;
-
-再往下，找到
-
-
-
-# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-#
-#location ~ \.php$ {
-#    root           html;
-#    fastcgi_pass   127.0.0.1:9000;
-#    fastcgi_index  index.php;
-#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
-#    include        fastcgi_params;
-#}
-</code></pre><p>先将前面的“#”去掉，同样将root  html;改为root   D:/wnmp/www;。再把/scripts改为“$document_root”，这里的“$document_root”就是指前面“root”所指的站点路径，这是改完后的：</p>
-<pre><code># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-#
-location ~ \.php$ {
-      root           D:/wnmp/www;
-      fastcgi_pass   127.0.0.1:9000;
-      fastcgi_index  index.php;
-      fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-      include        fastcgi_params;
-}
-</code></pre><p>保存配置文件，就可以了。</p>
-<p>nginx+php的环境就初步配置好了，来跑跑看。我们可以输入命令 </p>
-<p>来启动php，并手动启动nginx，当然也可以利用脚本来实现。</p>
-<p>首先把下载好的RunHiddenConsole.zip包解压到nginx目录内，RunHiddenConsole.exe的作用是在执行完命令行脚本后可以自动关闭脚本，而从脚本中开启的进程不被关闭。然后来创建脚本，命名为“start_nginx.bat”，我们在Notepad++里来编辑它</p>
-<pre><code>@echo off
-REM Windows 下无效
-REM set PHP_FCGI_CHILDREN=5
-
-##REM 每个进程处理的最大请求数，或设置为 Windows 环境变量
-set PHP_FCGI_MAX_REQUESTS=1000
-
-echo Starting PHP FastCGI...
-RunHiddenConsole D:/wnmp/php5/php-cgi.exe -b 127.0.0.1:9000 -c D:/wnmp/php5/php.ini
-
-echo Starting nginx...
-RunHiddenConsole D:/wnmp/nginx/nginx.exe -p D:/wnmp/nginx
-</code></pre><p>再另外创建一个名为stop_nginx.bat的脚本用来关闭nginx<br>        @echo off<br>        echo Stopping nginx…<br>        taskkill /F /IM nginx.exe &gt; nul<br>        echo Stopping PHP FastCGI…<br>        taskkill /F /IM php-cgi.exe &gt; nul<br>        exit</p>
-<p>这样，我们的服务脚本也都创建完毕了。双击start_nginx.bat看看进程管理器有两个nginx.exe的进程和一个php-cgi.exe的进程</p>
-<p>如果启动报msvcp110错误之类，就去找360人工服务搜索msvcp110一键修复，修复完要重启才能生效</p>
-<p>到站点目录下，新建一个phpinfo.php的文件，在里面编辑</p>
-<pre><code>&lt;?php
-    phpinfo();
-?&gt;
-</code></pre><p>保存后，打开浏览器输入“<a href="http://localhost/phpinfo.php”，如果看到php的配置" target="_blank" rel="external">http://localhost/phpinfo.php”，如果看到php的配置</a>  就说明，nginx+php的环境已经配置好了</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/15/nginx-php/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-article-title" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/13/article-title/">测试文件</a>
-    </h1>
   
 
-        
-        <a href="/2017/06/13/article-title/" class="archive-article-date">
-  	<time datetime="2017-06-13T05:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我丢</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/13/article-title/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/13/hello-world/" class="archive-article-date">
-  	<time datetime="2017-06-13T03:51:55.468Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/13/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
 
 
@@ -560,8 +309,8 @@ RunHiddenConsole D:/wnmp/nginx/nginx.exe -p D:/wnmp/nginx
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
