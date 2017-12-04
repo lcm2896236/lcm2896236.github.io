@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | yourdaddy</title>
+  <title>apache多域名配置 | yourdaddy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="yourdaddy">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="第一步：找到httpd.conf文件，把DocumentRoot “项目”  用屏蔽掉 第二步：在conf子文件夹extra内打开httpd-vhosts.conf DocumentRoot “a项目路径”ServerName a.comServerAlias www.a.comServerAlias a.com    # 配置欢迎首页面    DirectoryIndex index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="apache多域名配置">
+<meta property="og:url" content="http://yoursite.com/2017/12/04/apache多域名配置/index.html">
 <meta property="og:site_name" content="yourdaddy">
+<meta property="og:description" content="第一步：找到httpd.conf文件，把DocumentRoot “项目”  用屏蔽掉 第二步：在conf子文件夹extra内打开httpd-vhosts.conf DocumentRoot “a项目路径”ServerName a.comServerAlias www.a.comServerAlias a.com    # 配置欢迎首页面    DirectoryIndex index.html">
+<meta property="og:updated_time" content="2017-12-04T02:01:15.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yourdaddy">
+<meta name="twitter:title" content="apache多域名配置">
+<meta name="twitter:description" content="第一步：找到httpd.conf文件，把DocumentRoot “项目”  用屏蔽掉 第二步：在conf子文件夹extra内打开httpd-vhosts.conf DocumentRoot “a项目路径”ServerName a.comServerAlias www.a.comServerAlias a.com    # 配置欢迎首页面    DirectoryIndex index.html">
   
     <link rel="alternative" href="/atom.xml" title="yourdaddy" type="application/atom+xml">
   
@@ -150,211 +154,145 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-apache多域名配置" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      apache多域名配置
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/04/apache多域名配置/" class="archive-article-date">
+
+        
+        <a href="/2017/12/04/apache多域名配置/" class="archive-article-date">
   	<time datetime="2017-12-04T01:54:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-04</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/04/apache多域名配置/">apache多域名配置</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一步：找到httpd.conf文件，把DocumentRoot “项目”  用屏蔽掉</p>
+<p>第二步：在conf子文件夹extra内打开httpd-vhosts.conf</p>
+<virtualhost *:80=""><br>DocumentRoot “a项目路径”<br>ServerName a.com<br>ServerAlias www.a.com<br>ServerAlias a.com<br>    # 配置欢迎首页面<br>    DirectoryIndex index.html index.htm index.php<br>    # 配置根目录权限<br>    <directory><br>        Options Indexes FollowSymLinks Includes ExecCGI<br>        AllowOverride All<br>        Require all granted<br>    </directory><br></virtualhost>
 
-        <div class="article-info info-on-right">
-          
-          
+<virtualhost *:80=""><br>DocumentRoot “b项目路径”<br>ServerName b.com<br>ServerAlias www.b.com<br>ServerAlias b.com<br>    # 配置欢迎首页面<br>    DirectoryIndex index.html index.htm index.php<br>    # 配置根目录权限<br>    <directory><br>        Options Indexes FollowSymLinks Includes ExecCGI<br>        AllowOverride All<br>        Require all granted<br>    </directory><br></virtualhost>
 
+<p>到此，多域名配置完毕</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/12/04/apache多域名配置/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/16/win10下配置IIS-PHP/" class="archive-article-date">
-  	<time datetime="2017-06-16T07:30:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-16</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/16/win10下配置IIS-PHP/">win10下配置IIS+PHP</a>
-    </h1>
+  
+    <a href="/2017/06/16/win10下配置IIS-PHP/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">win10下配置IIS+PHP</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/15/配置github-hexo/" class="archive-article-date">
-  	<time datetime="2017-06-15T08:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/配置github-hexo/">配置github+hexo</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/15/进阶nginx-php/" class="archive-article-date">
-  	<time datetime="2017-06-15T06:29:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/进阶nginx-php/">进阶nginx+php</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/15/nginx-php/" class="archive-article-date">
-  	<time datetime="2017-06-15T01:00:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/nginx-php/">nginx+php</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/13/article-title/" class="archive-article-date">
-  	<time datetime="2017-06-13T05:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/13/article-title/">测试文件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/13/hello-world/" class="archive-article-date">
-  	<time datetime="2017-06-13T03:51:55.468Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -377,8 +315,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

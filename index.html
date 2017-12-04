@@ -152,6 +152,60 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-apache多域名配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/04/apache多域名配置/">apache多域名配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/04/apache多域名配置/" class="archive-article-date">
+  	<time datetime="2017-12-04T01:54:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一步：找到httpd.conf文件，把DocumentRoot “项目”  用屏蔽掉</p>
+<p>第二步：在conf子文件夹extra内打开httpd-vhosts.conf</p>
+<virtualhost *:80=""><br>DocumentRoot “a项目路径”<br>ServerName a.com<br>ServerAlias www.a.com<br>ServerAlias a.com<br>    # 配置欢迎首页面<br>    DirectoryIndex index.html index.htm index.php<br>    # 配置根目录权限<br>    <directory><br>        Options Indexes FollowSymLinks Includes ExecCGI<br>        AllowOverride All<br>        Require all granted<br>    </directory><br></virtualhost>
+
+<virtualhost *:80=""><br>DocumentRoot “b项目路径”<br>ServerName b.com<br>ServerAlias www.b.com<br>ServerAlias b.com<br>    # 配置欢迎首页面<br>    DirectoryIndex index.html index.htm index.php<br>    # 配置根目录权限<br>    <directory><br>        Options Indexes FollowSymLinks Includes ExecCGI<br>        AllowOverride All<br>        Require all granted<br>    </directory><br></virtualhost>
+
+<p>到此，多域名配置完毕</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/04/apache多域名配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-win10下配置IIS-PHP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,8 +226,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#一：安装IIS服务器</p>
-<p>1.进入控制面板&gt;&gt;程序和功能&gt;&gt;打开或关闭Windows 功能，找到Internet信息服务，记得选中CGI这一项<br>/img/iis+php/1.jpg</p>
+        <h1 id="一：安装IIS服务器"><a href="#一：安装IIS服务器" class="headerlink" title="一：安装IIS服务器"></a>一：安装IIS服务器</h1><p>1.进入控制面板&gt;&gt;程序和功能&gt;&gt;打开或关闭Windows 功能，找到Internet信息服务，记得选中CGI这一项<br> /img/iis+php/1.jpg</p>
 
       
 
